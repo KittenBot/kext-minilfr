@@ -1,0 +1,521 @@
+{
+  blocks: [
+    {
+      opcode: 'arduinostart',
+      blockType: 'conditional',
+      branchCount: 2,
+      isTerminal: true,
+      message2: 'loop',
+      text: [
+        "$$MiniLFR_arduino_setup",
+        "$$MiniLFR_arduino_loop"
+      ],
+      mode: ['arduino'],
+      hatType: true,
+      cpp: ['void setup()', 'void loop()']
+    },
+    {
+      opcode: 'spotlight',
+      blockType: "command",
+      text: "$$MiniLFR_spotlight",
+      arguments: {
+          LEFT: {
+              type: "string",
+              menu: 'eyeIndex',
+              defaultValue: 1
+          },
+          RIGHT: {
+              type: "string",
+              menu: 'eyeIndex',
+              defaultValue: 1
+          }
+      },
+      cmd: "M6 [LEFT] [RIGHT]",
+      arduino: {
+        cpp: 'mini.spotlightSet([LEFT],[RIGHT])',
+        object: 'mini'
+      }
+    },
+    {
+        opcode: 'rgbbrightness',
+        blockType: "command",
+        text: "$$MiniLFR_rgbbrightness",
+        arguments: {
+            BRIGHT: {
+                type: "slider",
+                defaultValue: 100,
+                min: 0,
+                max: 255
+            }
+        },
+        cmd: "M14 [BRIGHT]",
+        arduino: {
+            cpp: 'mini.setRgbBrightness([BRIGHT])',
+            object: 'mini'
+        }
+    },
+    {
+        opcode: 'rgbBottom',
+        blockType: "command",
+        text: "$$MiniLFR_rgbBottom",
+        arguments: {
+            INDEX: {
+                type: "string",
+                menu: 'rgbIndex',
+                defaultValue: 0
+            },
+            COLOR: {
+                type: "colorrgb",
+                hook: "hex2rgb"
+            }
+        },
+        cmd: "M13 [INDEX] [COLOR]",
+        arduino: {
+            cpp: 'mini.hoverRgbShow([INDEX],[COLOR])',
+            object: 'mini'
+        }
+    },
+    {
+        opcode: 'rgbBottomOff',
+        blockType: "command",
+        text: "$$MiniLFR_rgbBottomOff",
+        cmd: "M13 0 0 0 0",
+        arduino: {
+            cpp: 'mini.hoverRgbShow(0,0,0,0)',
+            object: 'mini'
+        }
+    },
+    {
+        opcode: 'rgbHead',
+        blockType: "command",
+        text: "$$MiniLFR_rgbHead",
+        arguments: {
+            INDEX: {
+                type: "string",
+                menu: 'rgbIndex',
+                defaultValue: 0
+            },
+            COLOR: {
+                type: "colorrgb",
+                hook: "hex2rgb"
+            }
+        },
+        cmd: "M16 [INDEX] [COLOR]",
+        arduino: {
+            cpp: 'mini.headRgbShow([INDEX],[COLOR])',
+            object: 'mini'
+        }
+    },
+    {
+        opcode: 'rgbHeadOff',
+        blockType: "command",
+        text: "$$MiniLFR_rgbHeadOff",
+        cmd: "M22 0 0 0 0",
+        arduino: {
+            cpp: 'mini.headRgbShow(0,0,0,0)',
+            object: 'mini'
+        }
+    },
+    {
+        opcode: 'rgbRing',
+        blockType: "command",
+        text: "$$MiniLFR_rgbRing",
+        arguments: {
+            INDEX: {
+                type: "string",
+                menu: 'rgbPix',
+                defaultValue: 0
+            },
+            COLOR: {
+                type: "colorrgb",
+                hook: "hex2rgb"
+            }
+        },
+        cmd: "M22 [INDEX] [COLOR]",
+        arduino: {
+            cpp: 'mini.ringRgbShow([INDEX],[COLOR])',
+            object: 'mini'
+        }
+    },
+    {
+        opcode: 'rgbRingOff',
+        blockType: "command",
+        text: "$$MiniLFR_rgbRingOff",
+        cmd: "M22 0 0 0 0",
+        arduino: {
+            cpp: 'mini.ringRgbShow(0,0,0,0)',
+            object: 'mini'
+        },
+        sepafter: 36
+    },
+    {
+        opcode: 'wheelspeed',
+        blockType: "command",
+        text: "$$MiniLFR_wheelspeed",
+        arguments: {
+            SPDL: {
+                type: "slider",
+                defaultValue: 100
+            },
+            SPDR: {
+                type: "slider",
+                defaultValue: 100
+            }
+        },
+        cmd: "M200 [SPDL] [SPDR]",
+        arduino: {
+            cpp: 'mini.speedSet([SPDL],[SPDR])',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'wheelspeeddelay',
+        blockType: "command",
+        text: "$$MiniLFR_wheelspeeddelay",
+        arguments: {
+            SPDL: {
+                type: "slider",
+                defaultValue: 100
+            },
+            SPDR: {
+                type: "slider",
+                defaultValue: 100
+            },
+            DELAY: {
+                type: "number",
+                defaultValue: 1000
+            }
+        },
+        cmd: "M202 [SPDL] [SPDR] [DELAY]",
+        arduino: {
+            cpp: 'mini.speedSet([SPDL],[SPDR],[DELAY])',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'stop',
+        blockType: "command",
+        text: "$$MiniLFR_stop",
+        cmd: "M200 0 0",
+        arduino: {
+            cpp: 'mini.stopMotor()',
+            object: 'mini'
+        },
+        sepafter: 36
+    },
+
+    {
+        opcode: 'buzzer',
+        blockType: "command",
+        text: "$$MiniLFR_buzzer",
+        arguments: {
+            FREQ: {
+                type: "number",
+                defaultValue: 200
+            },
+            DURATION: {
+                type: "number",
+                defaultValue: 500
+            }
+        },
+        cmd: "M18 [FREQ] [DURATION]",
+        arduino: {
+            cpp: 'mini.buzz([FREQ],[DURATION])',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'playmusic',
+        blockType: "command",
+        text: "$$MiniLFR_playmusic",
+        arguments: {
+            NOTE: {
+                type: "string",
+                defaultValue: 'g5:1 d c g4:2 b:1 c5:3 '
+            }
+        },
+        cmd: "M17 [NOTE]",
+        arduino: {
+            cpp: 'mini.playMusic([NOTE])',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'sensor',
+        blockType: "reporter",
+        text: "$$MiniLFR_sensor",
+        arguments: {
+            SENSOR: {
+                type: "number",
+                defaultValue: 2,
+                menu: 'lfrSensor'
+            }
+        },
+        cmd: "M1 [SENSOR]",
+        arduino: {
+            cpp: 'mini.getSensor([SENSOR])',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'distance',
+        blockType: "reporter",
+        text: "$$MiniLFR_distance",
+        cmd: "M7",
+        arduino: {
+            cpp: 'mini.distance()',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'power',
+        blockType: "reporter",
+        text: "$$MiniLFR_power",
+        cmd: "M8",
+        arduino: {
+            cpp: 'mini.batteryVoltage()',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'button',
+        blockType: "boolean",
+        text: "$$MiniLFR_button",
+        arguments: {
+            BUTTON: {
+                type: "string",
+                defaultValue: '1',
+                menu: 'buttons'
+            }
+        },
+        cmd: "M9 [BUTTON]",
+        arduino: {
+            cpp: 'mini.buttonGet([BUTTON])',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'wheninfraget',
+        blockType: "hat",
+        text: "$$MiniLFR_wheninfraget",
+        arguments: {
+            CMD: {
+                type: "string",
+                menu: 'infraCmd',
+                defaultValue: 'FFA857'
+            }
+        },
+        arduino: {
+            import: {
+                "infra_[CMD]": [
+                    "void infra_[CMD](){\\r\\n##CODE##\\r\\n}"
+                ]
+            },
+            cpp: 'mini.registerCallback(0x[CMD],&infra_[CMD])',
+            object: 'mini'
+        },
+        isEdgeActivated: false,
+    },
+    {
+        opcode: 'whenbutton',
+        blockType: "hat",
+        text: "$$MiniLFR_whenbutton",
+        arguments: {
+            CMD: {
+                type: "string",
+                menu: 'buttonList',
+                defaultValue: 'E0EE0A'
+            }
+        },
+        arduino: {
+            import: {
+                "infra_[CMD]": [
+                    "void btn_[CMD](){\\r\\n##CODE##\\r\\n}"
+                ]
+            },
+            cpp: 'mini.registerCallback(0x[CMD],&btn_[CMD])',
+            object: 'mini'
+        },
+        isEdgeActivated: false,
+    },
+    {
+        opcode: 'infrarx',
+        blockType: "reporter",
+        text: "$$MiniLFR_infrarx",
+        cmd: "M11",
+        arduino: {
+            cpp: 'mini.infraReceive()',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'infratx',
+        blockType: "command",
+        text: "$$MiniLFR_infratx",
+        arguments: {
+            SEND: {
+                type: "string",
+                defaultValue: '1234'
+            }
+        },
+        cmd: "M12 [SEND]",
+        arduino: {
+            cpp: 'mini.infraSend([SEND])',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'mp3play',
+        blockType: "command",
+        text: "$$MiniLFR_mp3play",
+        cmd: "M30 0 0 100",
+        arduino: {
+            cpp: 'mini.extIo(0,0,100)',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'mp3loop',
+        blockType: "command",
+        text: "$$MiniLFR_mp3loop",
+        arguments: {
+            DIR: {
+                type: "string",
+                defaultValue: 'NEXT',
+                menu: 'mp3direction'
+            }
+        },
+        cmd: "M30 [DIR] 100",
+        arduino: {
+            cpp: 'mini.extIo([DIR],100)',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'mp3volumn',
+        blockType: "command",
+        text: "$$MiniLFR_mp3volumn",
+        arguments: {
+            VOLUMN: {
+                type: "string",
+                menu: 'volumnList',
+                defaultValue: 1
+            }
+        },
+        cmd: "M30 [VOLUMN] 500",
+        arduino: {
+            cpp: 'mini.extIo([VOLUMN],500)',
+            object: 'mini'
+        },
+        sepafter: 36
+    },
+    {
+        opcode: 'ledstring',
+        blockType: "command",
+        text: "$$MiniLFR_ledstring",
+        arguments: {
+            STR: {
+                type: "string",
+                defaultValue: 'hello world'
+            }
+        },
+        cmd: "M20 [STR]",
+        arduino: {
+            cpp: 'mini.matrixShowString("[STR]")',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'ledmatrix',
+        blockType: "command",
+        text: "$$MiniLFR_ledmatrix",
+        arguments: {
+            MAT: {
+                type: "ledmatrix",
+                defaultValue: '00000000024000000000042003c00000'
+            }
+        },
+        cmd: "M21 [MAT]",
+        arduino: {
+            cpp: 'mini.matrixShow("[MAT]")',
+            object: 'mini'
+        },
+    },
+    {
+        opcode: 'ledmatrixclear',
+        blockType: "command",
+        text: "$$MiniLFR_ledmatrixclear",
+        cmd: "M21 00000000000000000000000000000000",
+        arduino: {
+            cpp: 'mini.matrixShow("00000000000000000000000000000000")',
+            object: 'mini'
+        },
+    }
+  ],
+  menus: {
+    eyeIndex: [{text: 'ON', value: '1'}, {text: 'OFF', value: '0'}],
+    motorIndex: [{text: 'LEFT', value: '1'}, {text: 'RIGHT', value: '2'}, {text: 'ALL', value: '0'}],
+    rgbIndex: [{text: 'LEFT', value: '1'}, {text: 'RIGHT', value: '2'}, {text: 'ALL', value: '0'}],
+    noteIndex: [
+      {text: 'Do', value: '261'},
+      {text: 'Re', value: '294'},
+      {text: 'Mi', value: '329'},
+      {text: 'Fa', value: '349'},
+      {text: 'So', value: '392'},
+      {text: 'Ra', value: '440'},
+      {text: 'Si', value: '493'}
+    ],
+    beatIndex: [
+      {text: '1/8', value: '125'},
+      {text: '1/4', value: '250'},
+      {text: '1/2', value: '500'},
+      {text: '1', value: '1000'},
+      {text: '2', value: '2000'}
+    ],
+    infraCmd: [
+      {text: 'POWER', value: 'FFA25D'},
+      {text: 'MENU', value: 'FF629D'},
+      {text: 'MUTE', value: 'FFE21D'},
+      {text: 'MODE', value: 'FF22DD'},
+      {text: '+', value: 'FF02FD'},
+      {text: 'RETURN', value: 'FFC23D'},
+      {text: 'BACK', value: 'FFE01F'},
+      {text: 'PLAY', value: 'FFA857'},
+      {text: 'FORWARD', value: 'FF906F'},
+      {text: '0', value: 'FF6897'},
+      {text: '-', value: 'FF9867'},
+      {text: 'OK', value: 'FFB04F'},
+      {text: '1',value: 'FF30CF'},
+      {text: '2', value: 'FF18E7'},
+      {text: '3',value: 'FF7A85'},
+      {text: '4', value: 'FF10EF'},
+      {text: '5', value: 'FF38C7'},
+      {text: '6', value: 'FF5AA5'},
+      {text: '7', value: 'FF42BD'},
+      {text: '8', value: 'FF4AB5'},
+      {text: '9', value: 'FF52AD'}
+    ],
+    rgbPix: ['ALL', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+    lfrSensor: ['0', '1', '2', '3', '4'],
+    buttons: ['1', '2'],
+    buttonList: [
+      {text: '1', value: 'E0EE0A'},
+      {text: '2', value: 'E0EE0B'}
+    ],
+    mp3direction: [
+      {
+        text: "$$MiniLFR_next",
+        value: '0'
+      },
+      {
+        text: "$$MiniLFR_previous",
+        value: '1'
+      }
+    ],
+    volumnList: [
+      {text: 'UP', value: '0'},
+      {text: 'DOWN', value: '1'}
+    ]
+  }
+
+}

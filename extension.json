@@ -1,0 +1,54 @@
+{
+    "id": "minilfr",
+    "name": "MiniLFR",
+    "version": "2.0.0",
+    "type": "arduino",
+    "fwtype": "arduino",
+    "protocol": "command",
+    "firmware": "linefollow2.hex",
+    "listdevice": {
+        "pid": "0x7523",
+        "vid": "0x1a86"
+    },
+    "arduino": {
+        "core": "arduino:avr",
+        "board": "uno",
+        "libs": [
+            "Adafruit-GFX-Library.zip",
+            "Adafruit_LED_Backpack.zip",
+            "Adafruit_LED_Backpack_Mini.zip",
+            "Adafruit_LED_Backpack_SW.zip",
+            "Adafruit_NeoPixel.zip",
+            "IRremote.zip",
+            "IRremote_mini.zip",
+            "l3g-arduino.zip",
+            "MiniLFR.zip",
+            "MiniLFRV2.zip",
+            "SoftI2CMaster.zip",
+            "SoftwareSerial.zip",
+            "Timer.zip",
+            "TimerFreeTone.zip"
+        ],
+        "objects": {
+            "mini": {
+                "import": "#include \"MiniLFRV2.h\"",
+                "object": "MiniLFRV2 mini;",
+                "setup": "mini.init()",
+                "loop": "mini.loop()"
+            }
+        }
+    },
+    "scripts": [
+        "external.js"
+    ],
+    "color1": "#6A7782",
+    "color2": "#424A51",
+    "color3": "#424A51",
+    "extensions": ["minilfr"],
+    "tags": ["hardware"],
+    "kittenext": true,
+    "masterExt": "minilfr",
+    "helpLink":"https://www.yuque.com/kittenbot/hardwares/minilfr-kittenblock",
+    "shopLink": "https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21482550023.52.3e26762ejZCSQb&id=553539619464",
+    "image": "lfrv2.png"
+}

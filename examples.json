@@ -1,0 +1,125 @@
+[
+    {
+        "name": "04 Spotlight Led",
+        "local": {
+            "zh-cn": "04点亮车头LED灯"
+        },
+        "description": "",
+        "path": "examples/04点亮车头LED灯.sb3",
+        "iconURL": "examples/MiniLFR04.png"
+    },
+    {
+        "name": "05 Bottom RGB",
+        "local": {
+            "zh-cn": "05车底RGB彩灯"
+        },
+        "description": "",
+        "path": "examples/05车底RGB彩灯.sb3",
+        "iconURL": "examples/MiniLFR05.png"
+    },
+    {
+        "name": "06 Buzzer&Music",
+        "local": {
+            "zh-cn": "06让蜂鸣器响起来"
+        },
+        "description": "",
+        "path": "examples/06让蜂鸣器响起来.sb3",
+        "iconURL": "examples/MiniLFR06.png"
+    },
+    {
+        "name": "07 Roll The Motor",
+        "local": {
+            "zh-cn": "07让电机转起来"
+        },
+        "description": "",
+        "path": "examples/07让电机转起来.sb3",
+        "iconURL": "examples/MiniLFR07.png"
+    },
+    {
+        "name": "08 Button 1&2",
+        "local": {
+            "zh-cn": "08学习按键1和按键2"
+        },
+        "description": "",
+        "path": "examples/08学习按键1和按键2.sb3",
+        "iconURL": "examples/MiniLFR08.png"
+    },
+    {
+        "name": "10 RGB Ring",
+        "local": {
+            "zh-cn": "10玩转8字灯环"
+        },
+        "description": "",
+        "path": "examples/10玩转8字灯环.sb3",
+        "iconURL": "examples/MiniLFR10.png"
+    },
+    {
+        "name": "11 NekoMimi RGB",
+        "local": {
+            "zh-cn": "11玩转猫头超声波RGB"
+        },
+        "description": "",
+        "path": "examples/11玩转猫头超声波RGB.sb3",
+        "iconURL": "examples/MiniLFR11.png"
+    },
+    {
+        "name": "12 NekoMimi Ultrasonic",
+        "local": {
+            "zh-cn": "12玩转猫头超声波避障"
+        },
+        "description": "",
+        "path": "examples/12玩转猫头超声波避障.sb3",
+        "iconURL": "examples/MiniLFR12.png"
+    },
+    {
+        "name": "13 Infra Transceiver",
+        "local": {
+            "zh-cn": "13玩转红外接收器&红外遥控器"
+        },
+        "description": "",
+        "path": "examples/13玩转红外接收&红外遥控器.sb3",
+        "iconURL": "examples/MiniLFR13.png"
+    },
+    {
+        "name": "14 LED Matrix Panel",
+        "local": {
+            "zh-cn": "14玩转贱鼠LED矩阵屏"
+        },
+        "description": "",
+        "path": "examples/14玩转贱鼠LED矩阵屏.sb3",
+        "iconURL": "examples/MiniLFR14.png"
+    },
+    {
+        "name": "15 MP3 Module",
+        "local": {
+            "zh-cn": "15玩转萌熊MP3"
+        },
+        "description": "",
+        "path": "examples/15玩转萌熊MP3.sb3",
+        "iconURL": "examples/MiniLFR15.png"
+    },
+    {
+        "name": "16 Button Event",
+        "local": {
+            "zh-cn": "16 按键事件"
+        },
+        "description": "",
+        "path": "examples/小圆车按键自锁切换灯亮灭.sb3"
+    },
+    {
+        "name": "17 Line Follow",
+        "local": {
+            "zh-cn": "17 图形化巡线"
+        },
+        "description": "",
+        "path": "examples/小圆车三路巡线小车.sb3"
+    },
+    {
+        "name": "18 Line Follow Debug",
+        "local": {
+            "zh-cn": "18 图形化巡线Debug"
+        },
+        "description": "",
+        "path": "examples/小圆车巡线调试串口打印.sb3"
+    }
+]
