@@ -65,8 +65,7 @@
                 defaultValue: 0
             },
             COLOR: {
-                type: "colorrgb",
-                hook: "hex2rgb"
+                type: "colorrgb"
             }
         },
         cmd: "M13 [INDEX] [COLOR]",
@@ -96,8 +95,7 @@
                 defaultValue: 0
             },
             COLOR: {
-                type: "colorrgb",
-                hook: "hex2rgb"
+                type: "colorrgb"
             }
         },
         cmd: "M16 [INDEX] [COLOR]",
@@ -127,8 +125,7 @@
                 defaultValue: 0
             },
             COLOR: {
-                type: "colorrgb",
-                hook: "hex2rgb"
+                type: "colorrgb"
             }
         },
         cmd: "M22 [INDEX] [COLOR]",
