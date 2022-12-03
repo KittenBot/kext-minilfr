@@ -50,5 +50,6 @@
     "masterExt": "minilfr",
     "helpLink":"https://www.yuque.com/kittenbot/hardwares/minilfr-kittenblock",
     "shopLink": "https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21482550023.52.3e26762ejZCSQb&id=553539619464",
-    "image": "lfrv2.png"
+    "image": "lfrv2.png",
+    "weights": 400
 }
