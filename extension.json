@@ -14,7 +14,7 @@
         "core": "arduino:avr",
         "board": "uno",
         "libs": [
-            "Adafruit-GFX-Library.zip",
+            "Adafruit_GFX_Library.zip",
             "Adafruit_LED_Backpack.zip",
             "Adafruit_LED_Backpack_Mini.zip",
             "Adafruit_LED_Backpack_SW.zip",
@@ -41,6 +41,16 @@
     "scripts": [
         "external.js"
     ],
+	"errorhelper": {
+		"arduino_core": {
+			"msg": "missing avr core",
+			"event": ["Install Avr Core", "arduino-install-pkg", "arduino:avr"]
+		},
+		"arduino_lib": {
+			"msg": "Missing Library",
+			"event": ["Install Library", "arduino-install-lib", "*"]
+		}
+	},
     "color1": "#6A7782",
     "color2": "#424A51",
     "color3": "#424A51",
