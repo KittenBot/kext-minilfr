@@ -1,7 +1,7 @@
 {
     "id": "minilfr",
     "name": "MiniLFR",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "type": "arduino",
     "fwtype": "arduino",
     "protocol": "command",
