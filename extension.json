@@ -14,7 +14,7 @@
         "core": "arduino:avr",
         "board": "uno",
         "libs": [
-            "Adafruit_GFX_Library.zip",
+            "Adafruit_GFX.zip",
             "Adafruit_LED_Backpack.zip",
             "Adafruit_LED_Backpack_Mini.zip",
             "Adafruit_LED_Backpack_SW.zip",
