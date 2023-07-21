@@ -32,7 +32,7 @@
       },
       cmd: "M6 [LEFT] [RIGHT]",
       arduino: {
-        cpp: 'mini.spotlightSet([LEFT],[RIGHT])',
+        cpp: 'mini.spotlightSet([LEFT],[RIGHT]);',
         object: 'mini'
       }
     },
@@ -50,7 +50,7 @@
         },
         cmd: "M14 [BRIGHT]",
         arduino: {
-            cpp: 'mini.setRgbBrightness([BRIGHT])',
+            cpp: 'mini.setRgbBrightness([BRIGHT]);',
             object: 'mini'
         }
     },
@@ -70,7 +70,7 @@
         },
         cmd: "M13 [INDEX] [COLOR]",
         arduino: {
-            cpp: 'mini.hoverRgbShow([INDEX],[COLOR])',
+            cpp: 'mini.hoverRgbShow([INDEX],[COLOR]);',
             object: 'mini'
         }
     },
@@ -80,7 +80,7 @@
         text: "$$MiniLFR_rgbBottomOff",
         cmd: "M13 0 0 0 0",
         arduino: {
-            cpp: 'mini.hoverRgbShow(0,0,0,0)',
+            cpp: 'mini.hoverRgbShow(0,0,0,0);',
             object: 'mini'
         }
     },
@@ -100,7 +100,7 @@
         },
         cmd: "M16 [INDEX] [COLOR]",
         arduino: {
-            cpp: 'mini.headRgbShow([INDEX],[COLOR])',
+            cpp: 'mini.headRgbShow([INDEX],[COLOR]);',
             object: 'mini'
         }
     },
@@ -110,7 +110,7 @@
         text: "$$MiniLFR_rgbHeadOff",
         cmd: "M22 0 0 0 0",
         arduino: {
-            cpp: 'mini.headRgbShow(0,0,0,0)',
+            cpp: 'mini.headRgbShow(0,0,0,0);',
             object: 'mini'
         }
     },
@@ -130,7 +130,7 @@
         },
         cmd: "M22 [INDEX] [COLOR]",
         arduino: {
-            cpp: 'mini.ringRgbShow([INDEX],[COLOR])',
+            cpp: 'mini.ringRgbShow([INDEX],[COLOR]);',
             object: 'mini'
         }
     },
@@ -140,7 +140,7 @@
         text: "$$MiniLFR_rgbRingOff",
         cmd: "M22 0 0 0 0",
         arduino: {
-            cpp: 'mini.ringRgbShow(0,0,0,0)',
+            cpp: 'mini.ringRgbShow(0,0,0,0);',
             object: 'mini'
         },
         sepafter: 36
@@ -161,7 +161,7 @@
         },
         cmd: "M200 [SPDL] [SPDR]",
         arduino: {
-            cpp: 'mini.speedSet([SPDL],[SPDR])',
+            cpp: 'mini.speedSet([SPDL],[SPDR]);',
             object: 'mini'
         },
     },
@@ -185,7 +185,7 @@
         },
         cmd: "M202 [SPDL] [SPDR] [DELAY]",
         arduino: {
-            cpp: 'mini.speedSet([SPDL],[SPDR],[DELAY])',
+            cpp: 'mini.speedSet([SPDL],[SPDR],[DELAY]);',
             object: 'mini'
         },
     },
@@ -195,7 +195,7 @@
         text: "$$MiniLFR_stop",
         cmd: "M200 0 0",
         arduino: {
-            cpp: 'mini.stopMotor()',
+            cpp: 'mini.stopMotor();',
             object: 'mini'
         },
         sepafter: 36
@@ -217,7 +217,7 @@
         },
         cmd: "M18 [FREQ] [DURATION]",
         arduino: {
-            cpp: 'mini.buzz([FREQ],[DURATION])',
+            cpp: 'mini.buzz([FREQ],[DURATION]);',
             object: 'mini'
         },
     },
@@ -233,7 +233,7 @@
         },
         cmd: "M17 [NOTE]",
         arduino: {
-            cpp: 'mini.playMusic([NOTE])',
+            cpp: 'mini.playMusic([NOTE]);',
             object: 'mini'
         },
     },
@@ -303,12 +303,7 @@
             }
         },
         arduino: {
-            import: {
-                "infra_[CMD]": [
-                    "void infra_[CMD](){\\r\\n##CODE##\\r\\n}"
-                ]
-            },
-            cpp: 'mini.registerCallback(0x[CMD],&infra_[CMD])',
+            cpp: 'mini.registerCallback(0x[CMD],&infra_[CMD]);',
             object: 'mini'
         },
         isEdgeActivated: false,
@@ -325,12 +320,7 @@
             }
         },
         arduino: {
-            import: {
-                "infra_[CMD]": [
-                    "void btn_[CMD](){\\r\\n##CODE##\\r\\n}"
-                ]
-            },
-            cpp: 'mini.registerCallback(0x[CMD],&btn_[CMD])',
+            cpp: 'mini.registerCallback(0x[CMD],&btn_[CMD]);',
             object: 'mini'
         },
         isEdgeActivated: false,
@@ -357,7 +347,7 @@
         },
         cmd: "M12 [SEND]",
         arduino: {
-            cpp: 'mini.infraSend([SEND])',
+            cpp: 'mini.infraSend([SEND]);',
             object: 'mini'
         },
     },
@@ -367,7 +357,7 @@
         text: "$$MiniLFR_mp3play",
         cmd: "M30 0 0 100",
         arduino: {
-            cpp: 'mini.extIo(0,0,100)',
+            cpp: 'mini.extIo(0,0,100);',
             object: 'mini'
         },
     },
@@ -384,7 +374,7 @@
         },
         cmd: "M30 [DIR] 100",
         arduino: {
-            cpp: 'mini.extIo([DIR],100)',
+            cpp: 'mini.extIo([DIR],100);',
             object: 'mini'
         },
     },
@@ -401,7 +391,7 @@
         },
         cmd: "M30 [VOLUMN] 500",
         arduino: {
-            cpp: 'mini.extIo([VOLUMN],500)',
+            cpp: 'mini.extIo([VOLUMN],500);',
             object: 'mini'
         },
         sepafter: 36
@@ -418,7 +408,7 @@
         },
         cmd: "M20 [STR]",
         arduino: {
-            cpp: 'mini.matrixShowString("[STR]")',
+            cpp: 'mini.matrixShowString("[STR]");',
             object: 'mini'
         },
     },
@@ -434,7 +424,7 @@
         },
         cmd: "M21 [MAT]",
         arduino: {
-            cpp: 'mini.matrixShow("[MAT]")',
+            cpp: 'mini.matrixShow("[MAT]");',
             object: 'mini'
         },
     },
@@ -444,7 +434,7 @@
         text: "$$MiniLFR_ledmatrixclear",
         cmd: "M21 00000000000000000000000000000000",
         arduino: {
-            cpp: 'mini.matrixShow("00000000000000000000000000000000")',
+            cpp: 'mini.matrixShow("00000000000000000000000000000000");',
             object: 'mini'
         },
     }

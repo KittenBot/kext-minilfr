@@ -33,8 +33,8 @@
             "mini": {
                 "import": "#include \"MiniLFRV2.h\"",
                 "object": "MiniLFRV2 mini;",
-                "setup": "mini.init()",
-                "loop": "mini.loop()"
+                "setup": "mini.init();",
+                "loop": "mini.loop();"
             }
         }
     },
@@ -48,7 +48,8 @@
 		},
 		"arduino_lib": {
 			"msg": "Missing Library",
-			"event": ["Install Library", "arduino-install-lib", "*"]
+			"event": ["Install Library", "arduino-install-lib", "*"],
+            "helperLink": "https://www.yuque.com/kittenbot/kittenblock/arduino-lib"
 		}
 	},
     "color1": "#6A7782",
