@@ -250,7 +250,7 @@
         },
         cmd: "M1 [SENSOR]",
         arduino: {
-            cpp: 'mini.getSensor([SENSOR])',
+            cpp: 'mini.getSensor([SENSOR]);',
             object: 'mini'
         },
     },
@@ -270,7 +270,7 @@
         text: "$$MiniLFR_power",
         cmd: "M8",
         arduino: {
-            cpp: 'mini.batteryVoltage()',
+            cpp: 'mini.batteryVoltage();',
             object: 'mini'
         },
     },
@@ -287,7 +287,7 @@
         },
         cmd: "M9 [BUTTON]",
         arduino: {
-            cpp: 'mini.buttonGet([BUTTON])',
+            cpp: 'mini.buttonGet([BUTTON]);',
             object: 'mini'
         },
     },
