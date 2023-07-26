@@ -44,11 +44,14 @@
     "color1": "#6A7782",
     "color2": "#424A51",
     "color3": "#424A51",
-    "extensions": ["minilfr"],
+    "extensions": [
+        "minilfr"
+    ],
     "kittenext": true,
     "masterExt": "minilfr",
-    "helpLink":"https://www.yuque.com/kittenbot/hardwares/minilfr-kittenblock",
+    "helpLink": "https://www.yuque.com/kittenbot/hardwares/minilfr-kittenblock",
     "shopLink": "https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21482550023.52.3e26762ejZCSQb&id=553539619464",
     "image": "lfrv2.png",
-    "weights": 589
+    "weights": 589,
+    "mainboard": true
 }
