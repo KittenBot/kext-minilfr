@@ -100,6 +100,8 @@ void lineFollowWork() {
   if(ret == -1){
     playLocalMusic(19);
     mode = IDLE;
+    // notify app out of line follow mode
+    Serial.println("M33");
   }
 }
 
